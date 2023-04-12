@@ -10,45 +10,40 @@
   <header class="row my-5">
     <h1>Leaderboard</h1>
   </header>
-  <main class="row my-5">
-    <div class="col-8">
-      <div class="container">
-        <div class="row my-3">
-          <h2 class="col-10">Recent scores</h2>
-          <button type="button" class="btn btn-secondary col-2">Refresh</button>
+  <main class="row my-6">
+    <div class="col-7">
+        <div class="row my-4">
+          <h2 class="col-9">Recent scores</h2>
+          <div class="col-1">
+            <span id="get-scores-load" role="status" class="text-secondary"></span>
+          </div>
+          <button type="button" id="get-scores" class="btn btn-secondary col-2">Refresh</button>
         </div>
-          <ol class="row list-group list-group-numbered">
+        <div class="row">
+          <h6 class="col-2">Position</h6>
+          <h6 class="col-6">Name</h6>
+          <h6 class="col-3 text-center">Score</h6>
+        </div>
+        <ul id="leaderboard-entries" class="row list-group">
           <li class="list-group-item d-flex justify-content-between align-items-start">
-            <span class="col-2"></span>
-            <div class="col-8">
-              <h4>Name</h4>
-            </div>
-            <span class="col-2 badge bg-secondary">100</span>
+            <span class="col-4 text-secondary"></span>
+            <span class="col-4 text-secondary"></span>
+            <span class="col-4 text-secondary"></span>
           </li>
-          <li class="list-group-item d-flex justify-content-between align-items-start">
-            <span class="col-2"></span>
-            <div class="col-8">
-              <h4>Name</h4>
-            </div>
-            <span class="col-2 badge bg-secondary">100</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-start">
-            <span class="col-2"></span>
-            <div class="col-8">
-              <h4>Name</h4>
-            </div>
-            <span class="col-2 badge bg-secondary">100</span>
-          </li>
-        </ol>
+        </ul>
       </div>
     </div>
     <div class="col-4 gy-2">
-      <h2>Add your score</h2>
-      <input type="text" placeholder="Your name">
-      <input type="text" placeholder="Your score">
-      <button type="button" class="btn btn-secondary">Submit</button>
-   </div>
-
+      <form novalidate>
+        <h2>Add your score</h2>
+        <input class="mb-2 form-control" type="text" placeholder="Username:" required id="new-user">
+        <input class="mb-2 form-control" type="text" placeholder="Score: Min 10 to Max 999" required id="new-score">
+        <div class="d-flex">
+          <button type="submit" class="btn btn-secondary" id="post-scores">Submit</button>
+          <span id="post-scores-load" role="status" class="ms-2 text-secondary"></span>
+        </div>
+      </form>
+    </div>
   </main>
-  </body>
+</body>
 </html>
