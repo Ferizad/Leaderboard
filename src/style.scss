@@ -1,2 +1,14 @@
 @import "custom";
 @import "~bootstrap/scss/bootstrap";
+
+.hidden {
+  display: none;
+}
+
+.valid {
+  border-color: rgb(69, 69, 134);
+}
+
+.not-valid {
+  border-color: red;
+}
